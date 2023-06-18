@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lalezar&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800&family=Sedgwick+Ave&family=Vazirmatn:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script defer>
+      console.log("hello");
+      function toggle() {
+        let selectedButton = document.getElementById("pr-btn");
+        let icon = selectedButton.querySelector("i");
+        // let x = document.getElementById("product");
+        // selectedButton.classList.toggle("active");
+        icon.classList.toggle("fa-chevron-down");
+        icon.classList.toggle("fa-chevron-up");
+        document.getElementById("product").classList.toggle("hide");
+      }
+      function incVal() {
+        countValue = document.getElementById("count");
+        countValue.value++;
+      }
+      function decVal() {
+        countValue = document.getElementById("count");
+        countValue.value--;
+      }
+    </script>
+
+    <style>
+      * {
+        direction: rtl;
+        font-family: "Lalezar", cursive;
+        font-family: "Poppins", sans-serif;
+        font-family: "Sedgwick Ave", cursive;
+        font-family: "Vazirmatn", sans-serif;
+        font-weight: 800;
+      }
+      body {
+        background-color: #f1f1f1;
+        font-family: Arial, sans-serif;
+      }
+      .login-container {
+        width: 89%;
+        margin: 20px auto;
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      }
+      .products-container {
+        width: 89%;
+        margin: 20px auto;
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      }
+      .product {
+        display: flex;
+        flex-direction: column;
+        border-radius: 5px;
+        padding: 5px;
+      }
+      .product-card-header {
+        display: flex;
+        justify-content: space-between;
+      }
+      .product-content {
+        border: 3px solid rgba(128, 128, 128, 0.329);
+        background-color: rgba(128, 128, 128, 0.329);
+        border-right: none;
+        border-left: none;
+        border-radius: 5px;
+        margin-top: 1rem;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+      }
+      #product {
+        height: 120px;
+        transition: all 0.5s;
+      }
+      #product.hide {
+        height: 0;
+        opacity: 0;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .products-input-container {
+        display: flex;
+        justify-content: space-between;
+        margin: 0.5rem 0rem;
+      }
+      .products-input {
+        border: none;
+      }
+      .products-label {
+        position: absolute;
+        display: block;
+        font-size: 15px;
+        color: #333333;
+        right: 1.4rem;
+        bottom: 3.3rem;
+        padding: 0px 2px;
+        background: white;
+        border-radius: 5px;
+      }
+      .products-btn {
+        background-color: DodgerBlue;
+        border: none;
+
+        color: white;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .btn-red {
+        background-color: rgb(199, 20, 20);
+      }
+
+      .btn-green {
+        background-color: green;
+      }
+
+      .products-btn i {
+        transition: 0.5s;
+      }
+      .products-btn.active i {
+        transform: rotate(90deg);
+      }
+
+      .products-btn:hover {
+        background-color: RoyalBlue;
+      }
+      .btn-red:hover {
+        background-color: rgb(165, 20, 20);
+      }
+      .btn-green:hover {
+        background-color: rgb(2, 107, 2);
+      }
+      .flex {
+        display: flex;
+        justify-content: start;
+        margin: 1rem 0;
+      }
+      h1 {
+        text-align: center;
+        color: #333333;
+        margin-bottom: 20px;
+      }
+      .login-label {
+        position: absolute;
+        display: block;
+        font-size: 15px;
+        color: #333333;
+        right: 1.4rem;
+        bottom: 3.3rem;
+        padding: 0px 2px;
+        background: white;
+        border-radius: 5px;
+      }
+      /* input[type="text"],
+      input[type="password"]  */
+      .login-input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        /* border: none; */
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        border: 3px solid #41301e6b;
+      }
+      .login-input:focus {
+        /* transition: border-color 0.5s ease-in-out;     */
+        border: 3px solid #41301e6b;
+
+        transition: 0.3s;
+      }
+      input[type="submit"] {
+        background-color: #eb9128;
+        color: #ffffff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        width: 100%;
+      }
+
+      .input-label-container {
+        display: flex;
+        position: relative;
+        margin: 1rem 0;
+      }
+
+      @media (min-width: 768px) {
+        /* styles for screens wider than 768px */
+        .login-container {
+          width: 400px;
+          margin: 50px auto;
+        }
+        .products-container {
+          width: 400px;
+          margin: 50px auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="login-container">
+      <div class="flex">
+        <h2>اطلاعات اصلی</h1>
+      </div>
+      <form>
+        <div class="input-label-container">
+          <label class="login-label" for="username">نام </label>
+          <input class="login-input" type="text" id="username" name="username" required />
+        </div>
+        <div class="input-label-container">
+          <label class="login-label" for="password">نام خانوادگی </label>
+          <input class="login-input" type="password" id="password" name="password" required />
+        </div>
+        <div class="input-label-container">
+          <label class="login-label" for="password">موبایل </label>
+          <input class="login-input" type="password" id="password" name="password" required />
+        </div>
+        <div class="input-label-container">
+          <label class="login-label" for="password">مرکز </label>
+          <input class="login-input" type="password" id="password" name="password" required />
+        </div>
+        <input type="submit" value="ورود" />
+      </form>
+    </div>   -->
+    <div class="products-container">
+      <h1>محصولات</h1>
+      <div class="product">
+        <div class="product-card-header">
+          <div><span>مداد شمعی </span></div>
+          <div>
+            <button class="products-btn" id="pr-btn" onClick="toggle()">
+              <i class="fa fa-chevron-down"></i>
+            </button>
+          </div>
+        </div>
+        <div class="product-content" id="product">
+          <div class="products-input-container">
+            <label class="" for="count">تعداد </label>
+            <button class="products-btn btn-green" onclick="incVal()">
+              <i class="fa fa-plus"></i>
+            </button>
+            <input
+              value="0"
+              class="products-input"
+              style="text-align: center"
+              type="count"
+              id="count"
+              name="count"
+              required
+            />
+            <button class="products-btn btn-red" onclick="decVal()">
+              <i class="fa fa-minus"></i>
+            </button>
+          </div>
+          <div class="products-input-container">
+            <label class="" for="brand">برند </label>
+            <select
+              name="cars"
+              id="brand"
+              style="
+                width: 30%;
+                font-weight: 800;
+                font-size: 1rem;
+                margin-left: 5rem;
+                border: none;
+              "
+            >
+              <option value="volvo">برند 1</option>
+              <option value="saab">برند 2</option>
+              <option value="opel">برند 3</option>
+              <option value="audi">برند 4</option>
+            </select>
+          </div>
+          <div class="products-input-container">
+            <label class="" for="suggestBrand">برند پیشنهادی </label>
+            <input
+              class="products-input"
+              type="suggestBrand"
+              id="suggestBrand"
+              name="suggestBrand"
+              required
+              style="margin-left: 3.6rem"
+            />
+          </div>
+        </div>
+      </div>
+      <input type="submit" value="ثبت خرید" />
+    </div>
+  </body>
+</html>
+
+<!-- <div
+  style="
+    display: block;
+    width: 100%;
+    direction: ltr !important;
+    text-align: left;
+  "
+>
+  <div v-for="(category, i) in amir.categories" :key="i">
+    <span v-html="category.title"></span>
+    <div>
+      <div v-for="(item, j) in category.items" :key="j">
+        <input type="text" v-model="item.count" />
+        <input type="text" v-model="item.brand" />
+        <input type="text" v-model="item.suggestBrand" />
+        <select v-if="category.attrItems.length" v-model="item.attr">
+          <option
+            v-html="op.title"
+            :value="op.id"
+            v-for="(op, k) in category.attrItems"
+            :key="k"
+          ></option>
+        </select>
+      </div>
+      <span @click="addItem(category)">add</span>
+    </div>
+  </div>
+</div> -->
